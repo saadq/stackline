@@ -49,8 +49,8 @@ export function Table({ item }: Props) {
           {item.sales.map((sale) => (
             <tr>
               <td>{sale.weekEnding}</td>
-              <td>{sale.retailSales}</td>
-              <td>{sale.wholesaleSales}</td>
+              <td>${sale.retailSales.toLocaleString()}</td>
+              <td>${sale.wholesaleSales.toLocaleString()}</td>
               <td>{sale.retailerMargin}</td>
             </tr>
           ))}
