@@ -3,6 +3,7 @@ import { useSelector, useDispatch } from 'react-redux'
 import { createGlobalStyle } from 'styled-components'
 import { Header } from './Header'
 import { ItemDetails } from './ItemDetails'
+import { Spinner } from './Spinner'
 import { fetchItem } from '../actions/item'
 import { AppState } from '../types/app'
 
@@ -11,7 +12,7 @@ const GlobalStyle = createGlobalStyle`
     box-sizing: border-box;
   }
 
-  html, body {
+  html, body, #root, #app {
     margin: 0;
     width: 100%;
     height: 100%;
@@ -19,6 +20,7 @@ const GlobalStyle = createGlobalStyle`
 
   body {
     background: #F6F8FA;
+    font-family: Open Sans, sans-serif;
   }
 
   h1, h2, h3, h4, h5, h6, p {
@@ -28,7 +30,7 @@ const GlobalStyle = createGlobalStyle`
 `
 
 export function App() {
-  const item = useSelector((state: AppState) => state.item)
+  const { item } = useSelector((state: AppState) => state.item)
   const dispatch = useDispatch()
 
   useEffect(() => {
@@ -39,7 +41,7 @@ export function App() {
     <>
       <GlobalStyle />
       <Header />
-      {item ? <ItemDetails item={item} /> : <p>NO ITEM</p>}
+      {item ? <ItemDetails item={item} /> : <Spinner />}
     </>
   )
 }

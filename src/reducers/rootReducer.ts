@@ -1,6 +1,6 @@
 import { combineReducers } from 'redux'
-import { sales } from './item'
+import { item } from './item'
 
 export const rootReducer = combineReducers({
-  sales
+  item
 })

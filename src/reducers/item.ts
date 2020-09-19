@@ -6,7 +6,7 @@ const initialState: ItemState = {
   errorMessage: ''
 }
 
-export function sales(
+export function item(
   state: ItemState = initialState,
   action: ItemAction
 ): ItemState {

@@ -1,11 +1,12 @@
 import React from 'react'
 import styled from 'styled-components'
 import { Sidebar } from './Sidebar'
-import { Chart } from './Chart'
+import { Table } from './Table'
 import { Item } from '../types/item'
 
 const Wrapper = styled.div`
-  margin-top: 3rem;
+  display: flex;
+  margin-top: 3.5rem;
 `
 
 interface Props {
@@ -15,8 +16,8 @@ interface Props {
 export function ItemDetails({ item }: Props) {
   return (
     <Wrapper>
-      <Sidebar />
-      <Chart />
+      <Sidebar item={item} />
+      <Table item={item} />
     </Wrapper>
   )
 }
